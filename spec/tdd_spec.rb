@@ -26,4 +26,25 @@ describe Array do
       expect(arr.two_sum).to eq([])
     end
   end
+
+  describe '#my_transpose' do
+    let(:two_dim_arr) { [[0, 1, 2], [3, 4, 5], [6, 7, 8]] }
+
+    it "should transpose two dimensional array" do
+      expect(two_dim_arr.my_transpose).to eq([[0, 3, 6], [1, 4, 7], [2, 5, 8]])
+    end
+
+    it "should return an empty array if two dimensional array is empty" do
+      empty_arr = [[]]
+      expect(empty_arr.my_transpose).to eq(empty_arr)
+    end
+  end
+
+  describe '#stock_picker' do
+    let(:stock_prices) { [7, 8, 10, 5] }
+
+    it "should return most profitable pair of days" do
+      expect(stock_prices.stock_picker).to eq([0, 2])
+    end
+  end
 end

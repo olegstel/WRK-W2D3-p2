@@ -18,4 +18,30 @@ class Array
 
     results
   end
+
+  def my_transpose
+    return self if first.empty?
+
+    results = []
+    (0...count).each do |i|
+      sub_array = []
+      (0...count).each do |j|
+        sub_array << self[j][i]
+      end
+      results << sub_array
+    end
+
+    results
+  end
+
+  def stock_picker
+    best_days = Hash.new(0)
+    (0...count).each do |i|
+      (i + 1...count).each do |j|
+        best_days[[i, j]] = self[j] - self[i]
+      end
+    end
+
+    best_days.max_by { |key, value| value }.first
+  end
 end
