@@ -32,7 +32,7 @@ describe TowersOfHanoi do
 
     it "should return false if start disc is greater than end disc" do
       game.move(0, 1)
-      expect(game.valid_move?(0, 1)). to be false
+      expect(game.valid_move?(0, 1)).to be false
     end
   end
 
@@ -43,7 +43,7 @@ describe TowersOfHanoi do
       expect(game.won?).to be true
     end
 
-    it "should return false if game is over" do
+    it "should return false if game is not over" do
       expect(game.won?).to be false
     end
   end
