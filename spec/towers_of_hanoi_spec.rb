@@ -36,4 +36,15 @@ describe TowersOfHanoi do
     end
   end
 
+  describe '#won?' do
+
+    it "should return true if game is over" do
+      game = TowersOfHanoi.new([[], [3, 2, 1], []])
+      expect(game.won?).to be true
+    end
+
+    it "should return false if game is over" do
+      expect(game.won?).to be false
+    end
+  end
 end

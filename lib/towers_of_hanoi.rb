@@ -2,8 +2,8 @@ class TowersOfHanoi
 
   attr_reader :towers
 
-  def initialize
-    @towers = ([[3, 2, 1], [], []])
+  def initialize(towers = ([[3, 2, 1], [], []]))
+    @towers = towers
   end
 
   def move(start_tower, end_tower)
@@ -15,5 +15,9 @@ class TowersOfHanoi
     return true if @towers[end_tower].empty?
     return false if @towers[start_tower].last > @towers[end_tower].last
     true
+  end
+
+  def won?
+    @towers[1].count == 3 || @towers[2].count == 3
   end
 end
